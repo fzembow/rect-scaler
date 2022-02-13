@@ -20,12 +20,16 @@ Pass the size of the container and the number of squares that need to be placed 
 resulting in an object containing the optimal solution.
 
 ```js
-const { largestSquare } = require('rect-scaler');
+import { largestSquare } from "rect-scaler";
 
 const containerWidth = 100;
 const containerHeight = 100;
 const numSquares = 8;
-const { rows, cols, width, height, area } = largestSquare(containerWidth, containerHeight, numSquares);
+const { rows, cols, width, height, area } = largestSquare(
+  containerWidth,
+  containerHeight,
+  numSquares
+);
 ```
 
 ### Fitting rectangles
@@ -34,28 +38,33 @@ Pass the size of the container and the number of rectangles that need to be plac
 along with the size of an (unscaled) rectangle that needs to be placed,
 resulting in an object containing the optimal solution.
 
-```js
-const { largestRect } = require('rect-scaler');
+```ts
+import { largestRect } from "rect-scaler";
 
 const containerWidth = 100;
 const containerHeight = 100;
 const numRects = 8;
 const rectWidth = 10;
 const rectHeight = 2;
-const result = largestRect(containerWidth, containerHeight, numRects, rectWidth, rectHeight);
+const result = largestRect(
+  containerWidth,
+  containerHeight,
+  numRects,
+  rectWidth,
+  rectHeight
+);
 ```
 
 ## Testing
 
 ```
-mocha test
+yarn test
 ```
 
 ## Todo
 
 - A mode to only allow for equally-sized rows, which would mean that not all rectangles could be placed, but the result would be more visually elegant.
 - It might always be the case that the optimal solution is the one where the meta-rectangle's aspect ratio most closely matches that of the container? Worth investigating as an optimization
-
 
 ## Acknowledgements
 
