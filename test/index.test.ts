@@ -1,4 +1,4 @@
-import { largestRect, largestSquare } from ".";
+import { largestRect, largestSquare } from "../src";
 
 describe("rectScaler", function () {
   describe("#largestSquare()", function () {
