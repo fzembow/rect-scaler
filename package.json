@@ -4,13 +4,15 @@
   "description": "Find largest rectangle and square sizes when fitting them into a container",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "jest"
   },
   "author": "Fil Zembowicz <fil@filosophy.org>",
   "repository": "github:fzembow/rect-scaler",
   "license": "MIT",
   "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^5.0.5"
+    "@types/jest": "^27.4.0",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.5.5"
   }
 }
