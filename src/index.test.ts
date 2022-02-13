@@ -1,4 +1,4 @@
-const scaler = require("../");
+import { largestRect, largestSquare } from ".";
 
 describe("rectScaler", function () {
   describe("#largestSquare()", function () {
@@ -6,7 +6,7 @@ describe("rectScaler", function () {
       const containerWidth = 1;
       const containerHeight = 1;
       const numSquares = 4;
-      const { rows, cols, width, height, area } = scaler.largestSquare(
+      const { rows, cols, width, height, area } = largestSquare(
         containerWidth,
         containerHeight,
         numSquares
@@ -22,7 +22,7 @@ describe("rectScaler", function () {
       const containerWidth = 1;
       const containerHeight = 1;
       let numSquares = 5;
-      let { width, height } = scaler.largestSquare(
+      let { width, height } = largestSquare(
         containerWidth,
         containerHeight,
         numSquares
@@ -31,7 +31,7 @@ describe("rectScaler", function () {
       expect(height).toBeCloseTo(0.333, 0.001);
 
       numSquares = 8;
-      ({ width, height } = scaler.largestSquare(
+      ({ width, height } = largestSquare(
         containerWidth,
         containerHeight,
         numSquares
@@ -44,7 +44,7 @@ describe("rectScaler", function () {
       const containerWidth = 1;
       const containerHeight = 35;
       const numSquares = 35;
-      const { width, height } = scaler.largestSquare(
+      const { width, height } = largestSquare(
         containerWidth,
         containerHeight,
         numSquares
@@ -57,7 +57,7 @@ describe("rectScaler", function () {
       const containerWidth = 10;
       const containerHeight = 2;
       const numSquares = 8;
-      const { width, height } = scaler.largestSquare(
+      const { width, height } = largestSquare(
         containerWidth,
         containerHeight,
         numSquares
@@ -71,13 +71,13 @@ describe("rectScaler", function () {
       let containerHeight = -1;
       let numSquares = 8;
       expect(() =>
-        scaler.largestSquare(containerWidth, containerHeight, numSquares)
+        largestSquare(containerWidth, containerHeight, numSquares)
       ).toThrow();
 
       containerHeight = 100;
       numSquares = 0;
       expect(() =>
-        scaler.largestSquare(containerWidth, containerHeight, numSquares)
+        largestSquare(containerWidth, containerHeight, numSquares)
       ).toThrow();
     });
   });
@@ -89,7 +89,7 @@ describe("rectScaler", function () {
       const numRects = 5;
       const width = 125;
       const height = 33;
-      const { area, rows, cols } = scaler.largestRect(
+      const { area, rows, cols } = largestRect(
         containerWidth,
         containerHeight,
         numRects,
@@ -106,13 +106,13 @@ describe("rectScaler", function () {
       let containerHeight = -1;
       let numSquares = 8;
       expect(() =>
-        scaler.largestSquare(containerWidth, containerHeight, numSquares)
+        largestSquare(containerWidth, containerHeight, numSquares)
       ).toThrow();
 
       containerHeight = 100;
       numSquares = 0;
       expect(() =>
-        scaler.largestSquare(containerWidth, containerHeight, numSquares)
+        largestSquare(containerWidth, containerHeight, numSquares)
       ).toThrow();
     });
   });
